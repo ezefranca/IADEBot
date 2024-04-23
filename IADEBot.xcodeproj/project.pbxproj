@@ -11,6 +11,8 @@
 		454F00872BB598FD00FC3C09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454F00862BB598FD00FC3C09 /* ContentView.swift */; };
 		454F00892BB598FE00FC3C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454F00882BB598FE00FC3C09 /* Assets.xcassets */; };
 		454F008C2BB598FE00FC3C09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454F008B2BB598FE00FC3C09 /* Preview Assets.xcassets */; };
+		454F00962BB5993E00FC3C09 /* TTS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 454F00952BB5993E00FC3C09 /* TTS.mm */; };
+		454F00992BB599DC00FC3C09 /* SwiftUISpeechToText in Frameworks */ = {isa = PBXBuildFile; productRef = 454F00982BB599DC00FC3C09 /* SwiftUISpeechToText */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		454F00862BB598FD00FC3C09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		454F00882BB598FE00FC3C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		454F008B2BB598FE00FC3C09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		454F00932BB5993E00FC3C09 /* IADEBot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IADEBot-Bridging-Header.h"; sourceTree = "<group>"; };
+		454F00942BB5993E00FC3C09 /* TTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTS.h; sourceTree = "<group>"; };
+		454F00952BB5993E00FC3C09 /* TTS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTS.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454F00992BB599DC00FC3C09 /* SwiftUISpeechToText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,7 @@
 		454F00832BB598FD00FC3C09 /* IADEBot */ = {
 			isa = PBXGroup;
 			children = (
+				454F00922BB5992900FC3C09 /* TTS */,
 				454F00842BB598FD00FC3C09 /* IADEBotApp.swift */,
 				454F00862BB598FD00FC3C09 /* ContentView.swift */,
 				454F00882BB598FE00FC3C09 /* Assets.xcassets */,
@@ -65,6 +72,16 @@
 				454F008B2BB598FE00FC3C09 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		454F00922BB5992900FC3C09 /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				454F00942BB5993E00FC3C09 /* TTS.h */,
+				454F00952BB5993E00FC3C09 /* TTS.mm */,
+				454F00932BB5993E00FC3C09 /* IADEBot-Bridging-Header.h */,
+			);
+			path = TTS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +100,9 @@
 			dependencies = (
 			);
 			name = IADEBot;
+			packageProductDependencies = (
+				454F00982BB599DC00FC3C09 /* SwiftUISpeechToText */,
+			);
 			productName = IADEBot;
 			productReference = 454F00812BB598FD00FC3C09 /* IADEBot.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +119,7 @@
 				TargetAttributes = {
 					454F00802BB598FD00FC3C09 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -111,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 454F00782BB598FD00FC3C09;
+			packageReferences = (
+				454F00972BB599DC00FC3C09 /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */,
+			);
 			productRefGroup = 454F00822BB598FD00FC3C09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				454F00872BB598FD00FC3C09 /* ContentView.swift in Sources */,
+				454F00962BB5993E00FC3C09 /* TTS.mm in Sources */,
 				454F00852BB598FD00FC3C09 /* IADEBotApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -269,12 +294,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IADEBot/Preview Content\"";
-				DEVELOPMENT_TEAM = HLSX4DMBX6;
+				DEVELOPMENT_TEAM = 54JDK55DR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need the mic for audio to text";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Need the speech recognition capabilities for searching tags";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +316,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezefranca.IADEBot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IADEBot/TTS/IADEBot-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,12 +328,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IADEBot/Preview Content\"";
-				DEVELOPMENT_TEAM = HLSX4DMBX6;
+				DEVELOPMENT_TEAM = 54JDK55DR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need the mic for audio to text";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Need the speech recognition capabilities for searching tags";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -317,6 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezefranca.IADEBot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IADEBot/TTS/IADEBot-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -344,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		454F00972BB599DC00FC3C09 /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pandashashwat97/SwiftUISpeechToText";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		454F00982BB599DC00FC3C09 /* SwiftUISpeechToText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 454F00972BB599DC00FC3C09 /* XCRemoteSwiftPackageReference "SwiftUISpeechToText" */;
+			productName = SwiftUISpeechToText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 454F00792BB598FD00FC3C09 /* Project object */;
 }
