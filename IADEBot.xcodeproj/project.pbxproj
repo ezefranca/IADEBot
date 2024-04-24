@@ -11,8 +11,11 @@
 		454F00872BB598FD00FC3C09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454F00862BB598FD00FC3C09 /* ContentView.swift */; };
 		454F00892BB598FE00FC3C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454F00882BB598FE00FC3C09 /* Assets.xcassets */; };
 		454F008C2BB598FE00FC3C09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454F008B2BB598FE00FC3C09 /* Preview Assets.xcassets */; };
-		454F00962BB5993E00FC3C09 /* TTS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 454F00952BB5993E00FC3C09 /* TTS.mm */; };
 		454F00992BB599DC00FC3C09 /* SwiftUISpeechToText in Frameworks */ = {isa = PBXBuildFile; productRef = 454F00982BB599DC00FC3C09 /* SwiftUISpeechToText */; };
+		456CC5B12BD86E4A00ED8C06 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456CC5B02BD86E4A00ED8C06 /* ContentViewModel.swift */; };
+		456CC5B42BD86F1200ED8C06 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456CC5B32BD86F1200ED8C06 /* SpeechSynthesizer.swift */; };
+		456CC5B62BD8730700ED8C06 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 456CC5B52BD8730700ED8C06 /* questions.json */; };
+		456CC5B82BD87FBD00ED8C06 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456CC5B72BD87FBD00ED8C06 /* DocumentPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +24,10 @@
 		454F00862BB598FD00FC3C09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		454F00882BB598FE00FC3C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		454F008B2BB598FE00FC3C09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		454F00932BB5993E00FC3C09 /* IADEBot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IADEBot-Bridging-Header.h"; sourceTree = "<group>"; };
-		454F00942BB5993E00FC3C09 /* TTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTS.h; sourceTree = "<group>"; };
-		454F00952BB5993E00FC3C09 /* TTS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTS.mm; sourceTree = "<group>"; };
+		456CC5B02BD86E4A00ED8C06 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		456CC5B32BD86F1200ED8C06 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		456CC5B52BD8730700ED8C06 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		456CC5B72BD87FBD00ED8C06 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +61,13 @@
 		454F00832BB598FD00FC3C09 /* IADEBot */ = {
 			isa = PBXGroup;
 			children = (
-				454F00922BB5992900FC3C09 /* TTS */,
+				456CC5B22BD86F0A00ED8C06 /* Helpers */,
 				454F00842BB598FD00FC3C09 /* IADEBotApp.swift */,
-				454F00862BB598FD00FC3C09 /* ContentView.swift */,
+				456CC5AF2BD86E2F00ED8C06 /* Views */,
+				456CC5AE2BD86E2800ED8C06 /* ViewModels */,
 				454F00882BB598FE00FC3C09 /* Assets.xcassets */,
 				454F008A2BB598FE00FC3C09 /* Preview Content */,
+				456CC5B52BD8730700ED8C06 /* questions.json */,
 			);
 			path = IADEBot;
 			sourceTree = "<group>";
@@ -74,14 +80,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		454F00922BB5992900FC3C09 /* TTS */ = {
+		456CC5AE2BD86E2800ED8C06 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				454F00942BB5993E00FC3C09 /* TTS.h */,
-				454F00952BB5993E00FC3C09 /* TTS.mm */,
-				454F00932BB5993E00FC3C09 /* IADEBot-Bridging-Header.h */,
+				456CC5B02BD86E4A00ED8C06 /* ContentViewModel.swift */,
 			);
-			path = TTS;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		456CC5AF2BD86E2F00ED8C06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				454F00862BB598FD00FC3C09 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		456CC5B22BD86F0A00ED8C06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				456CC5B32BD86F1200ED8C06 /* SpeechSynthesizer.swift */,
+				456CC5B72BD87FBD00ED8C06 /* DocumentPicker.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456CC5B62BD8730700ED8C06 /* questions.json in Resources */,
 				454F008C2BB598FE00FC3C09 /* Preview Assets.xcassets in Resources */,
 				454F00892BB598FE00FC3C09 /* Assets.xcassets in Resources */,
 			);
@@ -162,8 +184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				454F00872BB598FD00FC3C09 /* ContentView.swift in Sources */,
-				454F00962BB5993E00FC3C09 /* TTS.mm in Sources */,
 				454F00852BB598FD00FC3C09 /* IADEBotApp.swift in Sources */,
+				456CC5B42BD86F1200ED8C06 /* SpeechSynthesizer.swift in Sources */,
+				456CC5B82BD87FBD00ED8C06 /* DocumentPicker.swift in Sources */,
+				456CC5B12BD86E4A00ED8C06 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezefranca.IADEBot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "IADEBot/TTS/IADEBot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,7 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezefranca.IADEBot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "IADEBot/TTS/IADEBot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
